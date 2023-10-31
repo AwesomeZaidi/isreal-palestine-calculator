@@ -12,29 +12,26 @@ const Connect = () => {
   // get link_token from your server when component mounts
   React.useEffect(() => {
     const createLinkToken = async () => {
-      const res = await axios.post(
-        "https://cors-anywhere.herokuapp.com/https://sandbox.plaid.com/link/token/create",
-        {
-          client_id,
-          secret,
-          client_name: "calculator app",
-          country_codes: ["US"],
-          language: "en",
-          products: ["auth"],
-        }
-      );
+      const res = await axios.post("http://localhost:4000/plaid/link", {
+        client_id,
+        secret,
+        client_name: "calculator app",
+        country_codes: ["US"],
+        language: "en",
+        products: ["auth"],
+      });
       console.log("res:", res);
-      if (res.data?.public_token) {
-        setToken(res.data.public_token);
+      if (res.data?.linkToken) {
+        setToken(res.data.linkToken);
       }
     };
     createLinkToken();
   }, []);
 
-  const onSuccess = useCallback<PlaidLinkOnSuccess>((publicToken, metadata) => {
-    // send public_token to your server
+  const onSuccess = useCallback<PlaidLinkOnSuccess>((linkToken, metadata) => {
+    // send link_token to your server
     // https://plaid.com/docs/api/tokens/#token-exchange-flow
-    console.log(publicToken, metadata);
+    console.log(linkToken, metadata);
   }, []);
 
   console.log("token:", token);
