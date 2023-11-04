@@ -7,7 +7,7 @@ const theme = createTheme({
       fontFamily: "medium",
     },
     h2: {
-      fontFamily: 'extrabold'
+      fontFamily: 'black'
     },
     h4: {
       fontFamily: "bold",
