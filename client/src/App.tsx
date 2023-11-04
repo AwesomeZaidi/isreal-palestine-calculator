@@ -1,14 +1,20 @@
-import React from "react";
-import logo from "./logo.svg";
+import { Box, ThemeProvider } from "@mui/material";
 import "./App.css";
-import { Button } from "@mui/material";
 import Connect from "./components/Connect";
+import "./styles.scss";
+import theme from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <Connect />
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box mt={2}>
+        <img
+          src="/logo-medium.svg"
+          style={{ height: "2.2em", marginLeft: "2em" }}
+        />
+        <Connect />
+      </Box>
+    </ThemeProvider>
   );
 }
 

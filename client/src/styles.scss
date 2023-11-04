@@ -1,0 +1,43 @@
+@font-face {
+    font-family: thin;
+    src: url(../public/fonts/TTF/THICCCBOI-Thin.ttf);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(../public/fonts/TTF/THICCCBOI-Regular.ttf);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(../public/fonts/TTF/THICCCBOI-Medium.ttf);
+}
+
+@font-face {
+    font-family: semibold;
+    src: url(../public/fonts/TTF/THICCCBOI-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(../public/fonts/TTF/THICCCBOI-Bold.ttf);
+}
+
+@font-face {
+    font-family: extrabold;
+    src: url(../public/fonts/TTF/THICCCBOI-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: black;
+    src: url(../public/fonts/TTF/THICCCBOI-Black.ttf);
+}
+
+
+$primary: #4A3AFF;
+$secondary: #ffffff;
+$third: #000;
+
+.title {
+    color: $primary;
+}

@@ -7,9 +7,9 @@ import cors from "cors";
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(routes);
 app.use(
   session({
     secret: process.env.SESSION_SECRET || "secret",
@@ -17,6 +17,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+app.use(routes);
 
 app.get("/", (req, res) => {
   res.send(`Guess who's back, back again.`);
